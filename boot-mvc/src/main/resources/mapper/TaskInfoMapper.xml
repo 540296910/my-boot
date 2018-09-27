@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.morry.boot_mvc.mybatis.TaskInfoMapper">
+    <select id="findAll" resultType="TaskInfo">
+        select id,task_id as taskId,task_name as task_name,task_type as taskType from task_info
+    </select>
+</mapper>
