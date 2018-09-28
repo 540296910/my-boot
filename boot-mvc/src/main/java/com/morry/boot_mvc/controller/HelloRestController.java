@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.morry.boot_mvc.async.MyAsyncService;
@@ -61,5 +62,17 @@ public class HelloRestController {
 	public String async() {
 		myAsyncService.testThread();
 		return "async";
+	}
+	
+	@RequestMapping(value="/rest/add" ,method= RequestMethod.POST)
+	public String addTaskInfo(com.morry.boot_mvc.mybatis.TaskInfo taskInfo) {
+		taskInfoService.addTaskInfo(taskInfo);
+		return "ok";
+	}
+	
+	@RequestMapping(value="/rest/jpaAdd" ,method= RequestMethod.POST)
+	public TaskInfo save(TaskInfo taskInfo) {
+		
+		return taskInfoReporsitory.save(taskInfo);
 	}
 }

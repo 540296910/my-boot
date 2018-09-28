@@ -21,4 +21,9 @@ public class TaskInfoServiceImpl implements TaskInfoService {
 		return taskInfoMapper.findAll();
 	}
 
+	@Override
+	public int addTaskInfo(TaskInfo taskInfo) {
+		return taskInfoMapper.addTaskInfo(taskInfo);
+	}
+
 }

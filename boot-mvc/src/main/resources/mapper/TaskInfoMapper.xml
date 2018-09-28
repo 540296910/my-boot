@@ -4,4 +4,7 @@
     <select id="findAll" resultType="TaskInfo">
         select id,task_id as taskId,task_name as task_name,task_type as taskType from task_info
     </select>
+    <insert id="addTaskInfo" parameterType="TaskInfo" useGeneratedKeys="true">
+    	insert into task_info(task_id,task_name,task_type) values (#{taskId}, #{taskName}, #{taskType})
+    </insert>
 </mapper>

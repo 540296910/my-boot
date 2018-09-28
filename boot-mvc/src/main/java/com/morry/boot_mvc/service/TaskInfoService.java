@@ -6,5 +6,7 @@ import com.morry.boot_mvc.mybatis.TaskInfo;
 
 public interface TaskInfoService {
 	
-	public List<TaskInfo> findAll();
+	List<TaskInfo> findAll();
+	
+	int addTaskInfo(TaskInfo taskInfo);
 }
