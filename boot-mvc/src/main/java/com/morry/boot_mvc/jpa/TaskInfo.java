@@ -5,31 +5,34 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
  * JPA实体
+ * 
  * @author lenovo
  *
  */
 @Entity
 @Table(name = "task_info")
-public class TaskInfo implements Serializable{
-	
+public class TaskInfo implements Serializable {
+
 	public TaskInfo() {
-		
+
 	}
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(name = "task_id")
 	private String taskId;
-	
+
 	@Column(name = "task_name")
 	private String taskName;
-	
+
 	@Column(name = "task_type")
 	private int taskType;
 
@@ -65,5 +68,4 @@ public class TaskInfo implements Serializable{
 		this.taskType = taskType;
 	}
 
-	
 }
