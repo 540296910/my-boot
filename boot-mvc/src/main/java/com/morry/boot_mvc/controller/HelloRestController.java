@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -71,7 +72,7 @@ public class HelloRestController {
 	}
 	
 	@RequestMapping(value="/rest/jpaAdd" ,method= RequestMethod.POST)
-	public TaskInfo save(TaskInfo taskInfo) {
+	public TaskInfo save(@Validated TaskInfo taskInfo) {
 		
 		return taskInfoReporsitory.save(taskInfo);
 	}

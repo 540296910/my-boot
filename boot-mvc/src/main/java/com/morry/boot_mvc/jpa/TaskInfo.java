@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 /**
  * JPA实体
@@ -28,6 +29,7 @@ public class TaskInfo implements Serializable {
 	private Long id;
 
 	@Column(name = "task_id")
+	@NotNull(message="任务ID不能为空")
 	private String taskId;
 
 	@Column(name = "task_name")
